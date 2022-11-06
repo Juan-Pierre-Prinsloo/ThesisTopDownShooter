@@ -1,0 +1,7 @@
+﻿2d Shooter player controller -> https://www.youtube.com/watch?v=LqrAbEaDQzc&ab_channel=BMo
+
+change mouse pointer -> https://www.youtube.com/watch?v=W4SE0_cfAqc&ab_channel=OXMONDTutorials
+
+enemy shooting -> https://www.youtube.com/watch?v=Htw2f2eqLFk&ab_channel=MikeScriven
+
+add damage to bullets -> https://www.youtube.com/watch?v=sXX5UR6yCH0&ab_channel=MikeScriven not yet done
