@@ -9,10 +9,12 @@ public class Weapon : MonoBehaviour
 
     ///The empty gameobject where the bullets will spawn
     public Transform firePoint;
-    public float fireForce = 20f;
+    public float fireForce = 20f, damage;
 
     public void Fire()
     {
+        bulletPrefab.GetComponent<Bullet>().Damage = damage;
+
         ///creating the bullet object at the firePoint location
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 

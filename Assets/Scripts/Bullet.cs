@@ -4,9 +4,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float Damage;
+
+    public Bullet(float damage)
+    {
+        this.Damage = damage;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Die();
+        GameObject collisionGameObject = collision.gameObject;
+
+        //if (collisionGameObject.name != "Player")
+        //{
+            if (collisionGameObject.GetComponent<HealthScript>() != null)
+            {
+                collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage);
+            }
+
+            Die();
+        //}
+
 
         //this is where we detect if we hit an enemy
 
