@@ -4,4 +4,6 @@ change mouse pointer -> https://www.youtube.com/watch?v=W4SE0_cfAqc&ab_channel=O
 
 enemy shooting -> https://www.youtube.com/watch?v=Htw2f2eqLFk&ab_channel=MikeScriven
 
-add damage to bullets -> https://www.youtube.com/watch?v=sXX5UR6yCH0&ab_channel=MikeScriven not yet done
+add damage to bullets -> https://www.youtube.com/watch?v=sXX5UR6yCH0&ab_channel=MikeScriven
+
+add text ui component -> https://www.youtube.com/watch?v=EQHymuRQrh4&ab_channel=DanielWood
