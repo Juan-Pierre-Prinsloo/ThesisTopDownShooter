@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
     public float StartHealth;
     public GameObject DiePEffect;
 
-    private float Hp;
+    private Text HealthText;
 
+    private float Hp;
+    private bool IsPlayer = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Hp = StartHealth;
+
+        IsPlayer = gameObject.name == "Player";
+
+        HealthText = GameObject.FindWithTag("HealthText").GetComponent<Text>(); 
+
+        Debug.Log(HealthText.text);
+
+        SetPlayerHealth();
     }
 
     // Update is called once per frame
@@ -25,13 +36,21 @@ public class HealthScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        //Debug.Log($"{this.gameObject.name} took {damage} damage and has {Hp} hp left");
+        SetPlayerHealth();
 
         Hp -= damage;
 
         if (Hp <= 0f)
         {
             Die();
+        }
+    }
+
+    void SetPlayerHealth()
+    {
+        if (IsPlayer)
+        {
+            HealthText.text = $"Player Health: {Hp}" ;
         }
     }
 
@@ -42,13 +61,13 @@ public class HealthScript : MonoBehaviour
             Instantiate(DiePEffect, transform.position, Quaternion.identity);
         }
 
-        if (gameObject.name != "Player")
+        if (IsPlayer)
         {
-            Destroy(gameObject);
+            //gameover
         }
         else
         {
-            //gameover
+            Destroy(gameObject);
         }
 
     }
