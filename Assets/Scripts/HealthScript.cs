@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +5,8 @@ public class HealthScript : MonoBehaviour
 {
     public float StartHealth;
     public GameObject DiePEffect;
+
+    public GameOverScreen GameOver;
 
     private Text HealthText;
 
@@ -23,15 +23,7 @@ public class HealthScript : MonoBehaviour
 
         HealthText = GameObject.FindWithTag("HealthText").GetComponent<Text>(); 
 
-        Debug.Log(HealthText.text);
-
         SetPlayerHealth();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void TakeDamage(float damage)
@@ -63,7 +55,7 @@ public class HealthScript : MonoBehaviour
 
         if (IsPlayer)
         {
-            //gameover
+            GameOver.Setup(0);
         }
         else
         {

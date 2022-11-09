@@ -7,3 +7,5 @@ enemy shooting -> https://www.youtube.com/watch?v=Htw2f2eqLFk&ab_channel=MikeScr
 add damage to bullets -> https://www.youtube.com/watch?v=sXX5UR6yCH0&ab_channel=MikeScriven
 
 add text ui component -> https://www.youtube.com/watch?v=EQHymuRQrh4&ab_channel=DanielWood
+
+add gameover screen -> https://www.youtube.com/watch?v=K4uOjb5p3Io&ab_channel=CocoCode
