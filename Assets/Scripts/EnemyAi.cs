@@ -11,24 +11,25 @@ public class EnemyAi : MonoBehaviour
     public float range, attackCooldown;
     public Rigidbody2D rb;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         canAttack = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        distToPlayer = Vector2.Distance(transform.position,player.position);
+        FacePlayer();
 
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+    }
+
+    void FixedUpdate()
+    {
         if (distToPlayer <= range)//Combat logic
         {
             //move towards player slowly
             rb.AddForce(this.transform.up * 0.25f, ForceMode2D.Force);
-            
-            FacePlayer();
 
             if (canAttack == true)
             {
