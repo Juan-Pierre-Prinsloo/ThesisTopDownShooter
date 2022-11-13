@@ -4,9 +4,12 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
     public float StartHealth;
+    
     public GameObject DiePEffect;
 
     public GameOverScreen GameOver;
+
+    public ScoreScript Score;
 
     private Text HealthText;
 
@@ -30,7 +33,15 @@ public class HealthScript : MonoBehaviour
     {
         SetPlayerHealth();
 
-        Hp -= damage;
+        if (Hp > 0f && Hp < damage)
+        {
+            Hp = 0f;
+        }
+
+        if (Hp > 0f)
+        {
+            Hp -= damage;
+        }
 
         if (Hp <= 0f)
         {
@@ -55,10 +66,11 @@ public class HealthScript : MonoBehaviour
 
         if (IsPlayer)
         {
-            GameOver.Setup(0);
+            GameOver.Setup(Score.Score);
         }
         else
         {
+            Score.AddScore(10);
             Destroy(gameObject);
         }
 
