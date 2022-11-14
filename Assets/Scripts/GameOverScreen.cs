@@ -6,8 +6,14 @@ public class GameOverScreen : MonoBehaviour
 {
     private Text ScoreText;
 
+    private GameMasterScript GameMaster;
+
     public void Setup(int score)
     {
+        GameMaster = GameObject.FindWithTag("MainCamera").GetComponent<GameMasterScript>();
+
+        GameMaster.GameOver();
+
         gameObject.SetActive(true);
         
         ScoreText = gameObject.transform.Find("GameOverScoreText").GetComponent<Text>();

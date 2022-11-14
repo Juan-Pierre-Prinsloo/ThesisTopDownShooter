@@ -9,7 +9,7 @@ public class HealthScript : MonoBehaviour
 
     public GameOverScreen GameOver;
 
-    public ScoreScript Score;
+    public GameMasterScript GameMaster;
 
     private Text HealthText;
 
@@ -20,6 +20,8 @@ public class HealthScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameMaster = GameObject.FindWithTag("MainCamera").GetComponent<GameMasterScript>();
+
         Hp = StartHealth;
 
         IsPlayer = gameObject.name == "Player";
@@ -66,11 +68,11 @@ public class HealthScript : MonoBehaviour
 
         if (IsPlayer)
         {
-            GameOver.Setup(Score.Score);
+            GameOver.Setup(GameMaster.Score);
         }
         else
         {
-            Score.AddScore(10);
+            GameMaster.AddScore(10);
             Destroy(gameObject);
         }
 

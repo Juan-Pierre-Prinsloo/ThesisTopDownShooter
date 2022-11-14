@@ -6,6 +6,8 @@ public class EnemyAi : MonoBehaviour
     private Transform player;
     private float distToPlayer;
     private bool canAttack;
+    private GameMasterScript GameMaster;
+
 
     public Weapon weapon;
     public float range, attackCooldown;
@@ -14,6 +16,9 @@ public class EnemyAi : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+
+        GameMaster = GameObject.FindWithTag("MainCamera").GetComponent<GameMasterScript>();
+
         canAttack = true;
     }
 
@@ -69,6 +74,7 @@ public class EnemyAi : MonoBehaviour
 
     void Die()
     {
+        GameMaster.EnemyRemoved();
         Destroy(gameObject);
     }
 

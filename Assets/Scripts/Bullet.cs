@@ -12,21 +12,13 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collisionGameObject = collision.gameObject;
+        
+        if (collisionGameObject.GetComponent<HealthScript>() != null)
+        {
+            collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage);
+        }
 
-        //if (collisionGameObject.name != "Player")
-        //{
-            if (collisionGameObject.GetComponent<HealthScript>() != null)
-            {
-                collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage);
-            }
-
-            Die();
-        //}
-
-
-        //this is where we detect if we hit an enemy
-
-        //also damage enemy if they are hit etc etc
+        Die();
     }
 
     private void OnBecameInvisible()

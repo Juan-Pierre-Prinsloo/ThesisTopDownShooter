@@ -7,6 +7,7 @@ TagManager:
   - HealthText
   - GameOverBG
   - ScoreText
+  - Enemy
   layers:
   - Default
   - TransparentFX
