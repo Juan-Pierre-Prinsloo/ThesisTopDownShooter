@@ -11,3 +11,5 @@ add text ui component -> https://www.youtube.com/watch?v=EQHymuRQrh4&ab_channel=
 add gameover screen -> https://www.youtube.com/watch?v=K4uOjb5p3Io&ab_channel=CocoCode
 
 gameobject spawn at random location -> https://www.youtube.com/watch?v=IbiwNnOv5So&ab_channel=UnityAce
+
+clamp to screen -> https://www.youtube.com/watch?v=ailbszpt_AI&ab_channel=PressStart **note that the ScreenToWorldPoint method does not return negative values as stated in the video
