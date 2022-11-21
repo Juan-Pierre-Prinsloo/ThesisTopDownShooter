@@ -18,6 +18,11 @@ public class Bullet : MonoBehaviour
             collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage);
         }
 
+        if (collisionGameObject.GetComponent<Rigidbody2D>() != null)
+        {
+            collisionGameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+
         Die();
     }
 
