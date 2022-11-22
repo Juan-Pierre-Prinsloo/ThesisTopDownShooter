@@ -17,3 +17,5 @@ clamp to screen -> https://www.youtube.com/watch?v=ailbszpt_AI&ab_channel=PressS
 enemy AI changes -> https://www.youtube.com/watch?v=_Z1t7MNk0c4&list=PLupFI7AjAdG2K77qAX6cNShqcVrYzEkH0&index=15&ab_channel=Blackthornprod
 
 opening a link programatically -> https://docs.unity3d.com/ScriptReference/Application.OpenURL.html
+
+Menu -> https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
