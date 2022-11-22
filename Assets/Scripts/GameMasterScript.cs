@@ -16,6 +16,7 @@ public class GameMasterScript : MonoBehaviour
     private GameObject Player;
     private int EnemyCount = 0;
     private bool CanSpawnEnemy;
+    private string Difficulty;
 
     void Start()
     {
@@ -26,6 +27,10 @@ public class GameMasterScript : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
 
         CanSpawnEnemy = true;
+
+        Difficulty = MainMenu.Difficulty;
+
+        SetDificulty();
     }
     
     void FixedUpdate()
@@ -81,12 +86,55 @@ public class GameMasterScript : MonoBehaviour
 
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        Debug.Log(enemies.Count());
-
         enemies.ToList().ForEach(e => Destroy(e));
 
         Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         Player.GetComponent<PlayerController>().enabled = false;
+    }
+
+    public void SetDificulty()
+    {
+        switch (Difficulty)
+        {
+            case "Easy":
+
+                MaxEnemyCount = 1;
+                SpawnCooldown = 3f;
+                Player.GetComponent<HealthScript>().StartHealth = 15f;
+
+                EnemyAi.attackCooldown = 1.5f;
+                EnemyAi.speed = 10;
+                EnemyAi.retreatDistance = 3;
+
+                break;
+
+            case "Normal":
+
+                MaxEnemyCount = 2;
+                SpawnCooldown = 2.4f;
+                Player.GetComponent<HealthScript>().StartHealth = 10f;
+
+                EnemyAi.attackCooldown = 0.9f;
+                EnemyAi.speed = 15;
+                EnemyAi.retreatDistance = 4;
+
+                break;
+
+            case "Hard":
+
+                MaxEnemyCount = 3;
+                SpawnCooldown = 1.8f;
+                Player.GetComponent<HealthScript>().StartHealth = 5f;
+
+                EnemyAi.attackCooldown = 0.6f;
+                EnemyAi.speed = 20;
+                EnemyAi.retreatDistance = 4;
+
+                break;
+
+            default:
+                break;
+        }
     }
 }

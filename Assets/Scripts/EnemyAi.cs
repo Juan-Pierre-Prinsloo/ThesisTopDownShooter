@@ -10,7 +10,8 @@ public class EnemyAi : MonoBehaviour
 
 
     public Weapon weapon;
-    public float range,attackCooldown, speed, stoppingDistance, retreatDistance;
+    public float stoppingDistance, range;
+    public static float attackCooldown, speed, retreatDistance;
     public Rigidbody2D rb;
 
     void Start()
@@ -56,7 +57,7 @@ public class EnemyAi : MonoBehaviour
     /// <summary>
     /// Rotate enemy so barrel face the player
     /// </summary>
-    void FacePlayer()
+    public void FacePlayer()
     {
         Vector2 aimDirection = (Vector2)player.position - rb.position;
 

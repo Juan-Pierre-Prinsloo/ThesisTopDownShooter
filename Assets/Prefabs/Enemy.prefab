@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4528397278641888204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,11 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3502248950845530842}
+  stoppingDistance: 5
   range: 20
-  attackCooldown: 0.9
-  speed: 10
-  stoppingDistance: 6
-  retreatDistance: 3
   rb: {fileID: 4528397278641888240}
 --- !u!114 &4528397278641888243
 MonoBehaviour:

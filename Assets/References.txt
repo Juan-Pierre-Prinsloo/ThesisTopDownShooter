@@ -19,3 +19,5 @@ enemy AI changes -> https://www.youtube.com/watch?v=_Z1t7MNk0c4&list=PLupFI7AjAd
 opening a link programatically -> https://docs.unity3d.com/ScriptReference/Application.OpenURL.html
 
 Menu -> https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
+
+pass values between scenes -> https://www.youtube.com/watch?v=BZjmqMd-4vo&ab_channel=CocoCode
