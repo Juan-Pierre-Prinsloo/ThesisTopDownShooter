@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
         if (gameObject.transform.tag == "Player")
         {
             GameMasterScript.PlayerShotsFired++;
-            Debug.Log($"Player shots {GameMasterScript.PlayerShotsFired}");
         }
 
         ///creating the bullet object at the firePoint location

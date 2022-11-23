@@ -21,6 +21,8 @@ public class GameMasterScript : MonoBehaviour
     private GameObject Player;
     private int EnemyCount = 0;
     private bool CanSpawnEnemy;
+    private bool CanAdjustD;
+    private float playerHitAcc = 0f;
 
     void Start()
     {
@@ -32,7 +34,14 @@ public class GameMasterScript : MonoBehaviour
 
         CanSpawnEnemy = true;
 
-        SetDificulty();
+        if (Difficulty == "Dynamic")
+        {
+            CanAdjustD = true;
+        }
+        else
+        {
+            SetDificulty();
+        }
     }
     
     void FixedUpdate()
@@ -42,9 +51,9 @@ public class GameMasterScript : MonoBehaviour
             return;
         }
 
-        if (Difficulty == "Dynamic")
+        if (Difficulty == "Dynamic" && CanAdjustD)
         {
-            DynamicDifficultyAdjustment();
+            StartCoroutine(DynamicDifficultyAdjustment());
         }
 
         if (CanSpawnEnemy)
@@ -112,7 +121,6 @@ public class GameMasterScript : MonoBehaviour
 
                 EnemyAi.attackCooldown = 1.5f;
                 EnemyAi.speed = 10;
-                EnemyAi.retreatDistance = 3;
 
                 break;
 
@@ -125,7 +133,6 @@ public class GameMasterScript : MonoBehaviour
 
                 EnemyAi.attackCooldown = 0.9f;
                 EnemyAi.speed = 15;
-                EnemyAi.retreatDistance = 4;
 
                 break;
 
@@ -137,7 +144,6 @@ public class GameMasterScript : MonoBehaviour
 
                 EnemyAi.attackCooldown = 0.6f;
                 EnemyAi.speed = 20;
-                EnemyAi.retreatDistance = 4;
 
                 break;
 
@@ -147,16 +153,53 @@ public class GameMasterScript : MonoBehaviour
                 SpawnCooldown = 2.4f;
                 Player.GetComponent<HealthScript>().StartHealth = 10f;
 
-                EnemyAi.attackCooldown = 0.9f;
+                EnemyAi.attackCooldown = 1f;
                 EnemyAi.speed = 15;
-                EnemyAi.retreatDistance = 4;
 
                 break;
         }
     }
 
-    void DynamicDifficultyAdjustment()
+    //every 0.8 seconds evaluate player skill to determine new difficulty parameters
+    IEnumerator DynamicDifficultyAdjustment()
     {
+        CanAdjustD = false;
 
+        yield return new WaitForSeconds(0.8f);
+
+        playerHitAcc = ((float)PlayerShotsHit / (float)PlayerShotsFired) * 100f; //get player shot hit percentage
+
+        if ((75f < playerHitAcc && playerHitAcc <= 100f))//hard bracket
+        {
+            MaxEnemyCount = 3;
+            SpawnCooldown = 1.8f;
+
+            EnemyAi.attackCooldown = 0.6f;
+            EnemyAi.speed = 20;
+
+            Debug.Log("Hard");
+        }
+        else if ((50f < playerHitAcc && playerHitAcc <= 75f) || (PlayerHitsTaken <= 3))//normal bracket
+        {
+            MaxEnemyCount = 2;
+            SpawnCooldown = 1.9f;
+
+            EnemyAi.attackCooldown = 0.9f;
+            EnemyAi.speed = 15;
+
+            Debug.Log("Normal");
+        }
+        else//easy bracket
+        {
+            MaxEnemyCount = 1;
+            SpawnCooldown = 3f;
+
+            EnemyAi.attackCooldown = 1.5f;
+            EnemyAi.speed = 10;
+
+            Debug.Log("Easy");
+        }
+
+        CanAdjustD = true;
     }
 }
