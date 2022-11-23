@@ -11,12 +11,12 @@ public class GameMasterScript : MonoBehaviour
     public int MaxEnemyCount = 1;
     public float SpawnCooldown = 3f;
     public bool gameOver = false;
+    public static string Difficulty;
 
     private Text ScoreText;
     private GameObject Player;
     private int EnemyCount = 0;
     private bool CanSpawnEnemy;
-    private string Difficulty;
 
     void Start()
     {
@@ -28,13 +28,16 @@ public class GameMasterScript : MonoBehaviour
 
         CanSpawnEnemy = true;
 
-        Difficulty = MainMenu.Difficulty;
-
         SetDificulty();
     }
     
     void FixedUpdate()
     {
+        if (Difficulty == "Dynamic")
+        {
+
+        }
+
         if (gameOver)
         {
             return;
@@ -109,6 +112,7 @@ public class GameMasterScript : MonoBehaviour
 
                 break;
 
+            case "Dynamic"://Dynamic starts with normal difficulty
             case "Normal":
 
                 MaxEnemyCount = 2;
@@ -133,7 +137,16 @@ public class GameMasterScript : MonoBehaviour
 
                 break;
 
-            default:
+            default://default to normal
+
+                MaxEnemyCount = 2;
+                SpawnCooldown = 2.4f;
+                Player.GetComponent<HealthScript>().StartHealth = 10f;
+
+                EnemyAi.attackCooldown = 0.9f;
+                EnemyAi.speed = 15;
+                EnemyAi.retreatDistance = 4;
+
                 break;
         }
     }

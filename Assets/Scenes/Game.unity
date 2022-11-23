@@ -691,6 +691,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5076149996688584658, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
+      propertyPath: m_Text
+      value: Dynamic Difficulty
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076149996688584668, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
+      propertyPath: m_Name
+      value: DynamicDifficultyText
+      objectReference: {fileID: 0}
     - target: {fileID: 5076149996731582116, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -778,6 +786,14 @@ PrefabInstance:
     - target: {fileID: 5076149996731582136, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076149997391431108, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DynamicDifficultyBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076149997391431110, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}
+      propertyPath: m_Name
+      value: DynamicDifficulty
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60ef8d5a33ec49046bbdc10a46e37eea, type: 3}

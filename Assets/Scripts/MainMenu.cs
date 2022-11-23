@@ -3,23 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public static string Difficulty;
-
    public void Easy()
     {
-        Difficulty = "Easy";
+        GameMasterScript.Difficulty = "Easy";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Normal()
     {
-        Difficulty = "Normal";
+        GameMasterScript.Difficulty = "Normal";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Hard()
     {
-        Difficulty = "Hard";
+        GameMasterScript.Difficulty = "Hard";
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
