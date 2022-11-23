@@ -30,6 +30,6 @@ public class GameOverScreen : MonoBehaviour
 
     public void SurveyBtn()
     {
-        //implement link to google forms survey
+        Application.OpenURL("https://forms.gle/d9VYzSLSqNgdnsh29");
     }
 }
