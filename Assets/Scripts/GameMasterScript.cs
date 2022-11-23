@@ -176,8 +176,6 @@ public class GameMasterScript : MonoBehaviour
 
             EnemyAi.attackCooldown = 0.6f;
             EnemyAi.speed = 20;
-
-            Debug.Log("Hard");
         }
         else if ((50f < playerHitAcc && playerHitAcc <= 75f) || (PlayerHitsTaken <= 3))//normal bracket
         {
@@ -186,8 +184,6 @@ public class GameMasterScript : MonoBehaviour
 
             EnemyAi.attackCooldown = 0.9f;
             EnemyAi.speed = 15;
-
-            Debug.Log("Normal");
         }
         else//easy bracket
         {
@@ -196,8 +192,6 @@ public class GameMasterScript : MonoBehaviour
 
             EnemyAi.attackCooldown = 1.5f;
             EnemyAi.speed = 10;
-
-            Debug.Log("Easy");
         }
 
         CanAdjustD = true;
