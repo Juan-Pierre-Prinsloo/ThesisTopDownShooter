@@ -31,8 +31,18 @@ public class HealthScript : MonoBehaviour
         SetPlayerHealth();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string bulletOwner)
     {
+        if (bulletOwner == "Player")//player shot bullet
+        {
+            GameMasterScript.PlayerShotsHit++;
+        }
+
+        if (bulletOwner == "Enemy")//enemy shot bullet
+        {
+            GameMasterScript.PlayerHitsTaken++;
+        }
+
         SetPlayerHealth();
 
         if (Hp > 0f && Hp < damage)

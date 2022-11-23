@@ -4,6 +4,8 @@ public class Bullet : MonoBehaviour
 {
     public float Damage;
 
+    public string Owner;
+
     public Bullet(float damage)
     {
         this.Damage = damage;
@@ -15,7 +17,7 @@ public class Bullet : MonoBehaviour
         
         if (collisionGameObject.GetComponent<HealthScript>() != null)
         {
-            collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage);
+            collisionGameObject.GetComponent<HealthScript>().TakeDamage(Damage, Owner);
         }
 
         if (collisionGameObject.GetComponent<Rigidbody2D>() != null)

@@ -13,8 +13,16 @@ public class Weapon : MonoBehaviour
     {
         bulletPrefab.GetComponent<Bullet>().Damage = damage;
 
+        if (gameObject.transform.tag == "Player")
+        {
+            GameMasterScript.PlayerShotsFired++;
+            Debug.Log($"Player shots {GameMasterScript.PlayerShotsFired}");
+        }
+
         ///creating the bullet object at the firePoint location
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        bullet.GetComponent<Bullet>().Owner = gameObject.transform.tag;
 
         ///shoots the bullet
         bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);

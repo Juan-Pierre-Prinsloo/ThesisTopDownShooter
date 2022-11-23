@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class GameMasterScript : MonoBehaviour
 {
+    public static string Difficulty;
+    public static int PlayerShotsFired = 0;
+    public static int PlayerShotsHit = 0;
+    public static int PlayerHitsTaken = 0;
+
     public Texture2D Cursor;
     public int Score = 0;
     public GameObject Enemy;
     public int MaxEnemyCount = 1;
     public float SpawnCooldown = 3f;
     public bool gameOver = false;
-    public static string Difficulty;
 
     private Text ScoreText;
     private GameObject Player;
@@ -33,14 +37,14 @@ public class GameMasterScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (Difficulty == "Dynamic")
-        {
-
-        }
-
         if (gameOver)
         {
             return;
+        }
+
+        if (Difficulty == "Dynamic")
+        {
+            DynamicDifficultyAdjustment();
         }
 
         if (CanSpawnEnemy)
@@ -149,5 +153,10 @@ public class GameMasterScript : MonoBehaviour
 
                 break;
         }
+    }
+
+    void DynamicDifficultyAdjustment()
+    {
+
     }
 }
