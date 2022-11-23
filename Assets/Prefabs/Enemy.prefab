@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3502248950845530842}
-  stoppingDistance: 5
+  stoppingDistance: 5.2
   range: 20
   rb: {fileID: 4528397278641888240}
 --- !u!114 &4528397278641888243

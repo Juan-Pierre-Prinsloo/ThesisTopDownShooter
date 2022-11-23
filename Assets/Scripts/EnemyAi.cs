@@ -11,7 +11,7 @@ public class EnemyAi : MonoBehaviour
 
     public Weapon weapon;
     public float stoppingDistance, range;
-    public static float attackCooldown, speed, retreatDistance = 3f;
+    public static float attackCooldown, speed = 5f, retreatDistance = 3f;
     public Rigidbody2D rb;
 
     void Start()

@@ -120,7 +120,7 @@ public class GameMasterScript : MonoBehaviour
                 Player.GetComponent<HealthScript>().StartHealth = 15f;
 
                 EnemyAi.attackCooldown = 1.5f;
-                EnemyAi.speed = 10;
+                EnemyAi.speed = 5;
 
                 break;
 
@@ -132,7 +132,6 @@ public class GameMasterScript : MonoBehaviour
                 Player.GetComponent<HealthScript>().StartHealth = 10f;
 
                 EnemyAi.attackCooldown = 0.9f;
-                EnemyAi.speed = 15;
 
                 break;
 
@@ -143,7 +142,6 @@ public class GameMasterScript : MonoBehaviour
                 Player.GetComponent<HealthScript>().StartHealth = 5f;
 
                 EnemyAi.attackCooldown = 0.6f;
-                EnemyAi.speed = 20;
 
                 break;
 
@@ -154,7 +152,6 @@ public class GameMasterScript : MonoBehaviour
                 Player.GetComponent<HealthScript>().StartHealth = 10f;
 
                 EnemyAi.attackCooldown = 1f;
-                EnemyAi.speed = 15;
 
                 break;
         }
@@ -175,7 +172,6 @@ public class GameMasterScript : MonoBehaviour
             SpawnCooldown = 1.8f;
 
             EnemyAi.attackCooldown = 0.6f;
-            EnemyAi.speed = 20;
         }
         else if ((50f < playerHitAcc && playerHitAcc <= 75f) || (PlayerHitsTaken <= 3))//normal bracket
         {
@@ -183,7 +179,6 @@ public class GameMasterScript : MonoBehaviour
             SpawnCooldown = 1.9f;
 
             EnemyAi.attackCooldown = 0.9f;
-            EnemyAi.speed = 15;
         }
         else//easy bracket
         {
@@ -191,7 +186,6 @@ public class GameMasterScript : MonoBehaviour
             SpawnCooldown = 3f;
 
             EnemyAi.attackCooldown = 1.5f;
-            EnemyAi.speed = 10;
         }
 
         CanAdjustD = true;
