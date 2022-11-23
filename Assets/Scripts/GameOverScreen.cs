@@ -21,9 +21,11 @@ public class GameOverScreen : MonoBehaviour
         ScoreText.text = $"Score : {score}";
     }
 
-    public void RestartBtn()
+    public void DynamicDifficultyBtn()
     {
-        SceneManager.LoadScene("SampleScene");
+        GameMasterScript.Difficulty = "Dynamic";
+
+        SceneManager.LoadScene("Game");
     }
 
     public void SurveyBtn()
