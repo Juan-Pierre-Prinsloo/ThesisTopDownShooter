@@ -21,3 +21,5 @@ opening a link programatically -> https://docs.unity3d.com/ScriptReference/Appli
 Menu -> https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
 
 pass values between scenes -> https://www.youtube.com/watch?v=BZjmqMd-4vo&ab_channel=CocoCode
+
+fixed web gl publish issues -> https://www.youtube.com/watch?v=YlFimhxdA1Q&ab_channel=AstroSam

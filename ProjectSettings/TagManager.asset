@@ -9,6 +9,7 @@ TagManager:
   - ScoreText
   - Enemy
   - PlayerWeapon
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX
