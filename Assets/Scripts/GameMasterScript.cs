@@ -166,12 +166,17 @@ public class GameMasterScript : MonoBehaviour
 
         playerHitAcc = ((float)PlayerShotsHit / (float)PlayerShotsFired) * 100f; //get player shot hit percentage
 
+        Debug.Log($"PlayerShotsFired {PlayerShotsFired}");
+        Debug.Log($"playerHitAcc {playerHitAcc}");
+
         if ((75f < playerHitAcc && playerHitAcc <= 100f))//hard bracket
         {
             MaxEnemyCount = 3;
             SpawnCooldown = 1.8f;
 
             EnemyAi.attackCooldown = 0.6f;
+
+            Debug.Log("H");
         }
         else if ((50f < playerHitAcc && playerHitAcc <= 75f) || (PlayerHitsTaken <= 3))//normal bracket
         {
@@ -179,6 +184,8 @@ public class GameMasterScript : MonoBehaviour
             SpawnCooldown = 1.9f;
 
             EnemyAi.attackCooldown = 0.9f;
+
+            Debug.Log("N");
         }
         else//easy bracket
         {
@@ -186,6 +193,8 @@ public class GameMasterScript : MonoBehaviour
             SpawnCooldown = 3f;
 
             EnemyAi.attackCooldown = 1.5f;
+
+            Debug.Log("E");
         }
 
         CanAdjustD = true;

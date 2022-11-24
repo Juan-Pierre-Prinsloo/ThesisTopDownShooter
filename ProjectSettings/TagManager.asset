@@ -8,6 +8,7 @@ TagManager:
   - GameOverBG
   - ScoreText
   - Enemy
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

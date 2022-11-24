@@ -33,12 +33,12 @@ public class HealthScript : MonoBehaviour
 
     public void TakeDamage(float damage, string bulletOwner)
     {
-        if (bulletOwner == "Player")//player shot bullet
+        if (bulletOwner == "PlayerWeapon")//player shot bullet
         {
             GameMasterScript.PlayerShotsHit++;
         }
 
-        if (bulletOwner == "Enemy")//enemy shot bullet
+        if (bulletOwner == "EnemyWeapon")//enemy shot bullet
         {
             GameMasterScript.PlayerHitsTaken++;
         }

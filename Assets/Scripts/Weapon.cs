@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
     {
         bulletPrefab.GetComponent<Bullet>().Damage = damage;
 
-        if (gameObject.transform.tag == "Player")
+        if (gameObject.transform.tag == "PlayerWeapon")
         {
             GameMasterScript.PlayerShotsFired++;
         }
